@@ -4,55 +4,66 @@ using UnityEngine;
 
 public class TurretPickup : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] Turret turret;
+    [SerializeField] Canvas turretUICanvas;
+    private bool isPickedUp = false;
 
     // Update is called once per frame
     void Update()
     {
-        
+        DropTurret();
+        ShowUI();
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        PickupTurret(collision);
+    }
+
+    private void PickupTurret(Collider2D collision)
+    {
+        if(isPickedUp == false)
+        {
+            //Compare the tag of turret with collision
+            if (collision.gameObject.tag == "Turret")
+            {
+                //if RMB is pressed
+                if (Input.GetKeyDown(KeyCode.Mouse1))
+                {
+                    //This is kind of cheating, but it works and destroying and re-instantiating in different functions turned out to be a nightmare.
+                    turret.transform.position = new Vector2(-1000, -1000);
+               
+                    isPickedUp = true;
+                }
+            }
+        }
+    }
+
+    private void DropTurret()
+    {
+        if (isPickedUp == true)
+        {
+            //if the MMB is pressed
+            if (Input.GetKeyDown(KeyCode.Mouse2))
+            {
+                //Drop the turret at players position
+                turret.transform.position = transform.position;
+
+                isPickedUp = false;
+            }
+        }
+    }
+
+    private void ShowUI()
+    {
+        //Display or hide UI depending on if turret is picked up or not
+        if (isPickedUp)
+        {
+            turretUICanvas.gameObject.SetActive(true);
+        }
+        else
+        {
+            turretUICanvas.gameObject.SetActive(false);
+        }
     }
 }
-
-//*************
-//PSUEDO CODE
-//*************
-
-//*********************
-//FOR PICKING UP TURRET
-//*********************
-
-//Create bool variable "pickedUp" equal to false
-
-//Create reference object for the turret
-
-//Use OnTriggerEnter to see if the player and the turret are colliding
-
-//Compare the tag of turret in OnTriggerEnter, so "other.tag == 'turret'"
-
-//check to see if the mouse position is a short enough distance away from the turret transform
-
-//If pickedUp is equal to false, if the RMB is pressed, delete the turret
-
-//Set pickedUp equal to true
-
-//Instantiate a UI prefab with the turret image in the corner of screen
-
-//*********************
-//FOR DROPPING TURRET
-//*********************
-
-//Find the mouse position
-
-//If pickedUp is equal to true
-
-//If RMB is pressed
-
-//Check the distance between mouse position and player transform is not too far away
-
-//Instantiate the turret at mouse position
-
-//Destroy UI turret element
