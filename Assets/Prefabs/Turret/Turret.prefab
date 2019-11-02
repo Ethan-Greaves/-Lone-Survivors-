@@ -109,7 +109,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0061579943, y: -0.10468054}
+  m_Offset: {x: 0.011838317, y: -0.17852497}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -120,7 +120,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.1552942, y: 1.9582491}
+  m_Size: {x: 1.7576692, y: 1.5151806}
   m_EdgeRadius: 0
 --- !u!50 &3039283956117733789
 Rigidbody2D:
@@ -238,10 +238,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movingTurret: {fileID: 9216620066577051834}
   enemy: {fileID: 1942007030708886782, guid: 284cb933a57c3314aae2095892731fa5, type: 3}
-  projectile: {fileID: 5058968110201948020, guid: 4a13bce9a28977d46a23b50d87ff4c22,
-    type: 3}
-  attackRange: 5
-  fireRate: 1
+  projectile: {fileID: 0}
+  attackRange: 3
+  fireRate: 2
+  speed: 20
 --- !u!1 &5215483225534545354
 GameObject:
   m_ObjectHideFlags: 0
