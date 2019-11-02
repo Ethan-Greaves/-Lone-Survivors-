@@ -21,6 +21,7 @@ public class TurretShooting : MonoBehaviour
     {
         //We want the first shot to shoot straight away
         fireDelay = 0;
+        
     }
 
     // Update is called once per frame
@@ -35,7 +36,7 @@ public class TurretShooting : MonoBehaviour
         //Find every enemy currently in the scene
         Enemy[] enemies = FindObjectsOfType<Enemy>();
 
-        //If there are no eneies presnt 
+        //If there are no enemies present 
         if(enemies.Length == 0)
         {
             return;
@@ -56,6 +57,9 @@ public class TurretShooting : MonoBehaviour
                 {
                     //That enemy is now the closest enemy
                     closestEnemy = enemies[i];
+
+                    //Shortest distance is now the distance of the new closest enemy
+                    closestEnemyDistance = Vector2.Distance(transform.position, enemies[i].transform.position);
                 }
             }
 
@@ -84,13 +88,10 @@ public class TurretShooting : MonoBehaviour
         if (fireDelay <= 0)
         {
             Instantiate(projectile, barrel.transform.position, barrel.rotation);
-            
 
             //Reset the delay
             fireDelay = fireRate;
         }
     }
-
-    
 }
 
