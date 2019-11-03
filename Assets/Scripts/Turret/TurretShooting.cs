@@ -21,7 +21,6 @@ public class TurretShooting : MonoBehaviour
     {
         //We want the first shot to shoot straight away
         fireDelay = 0;
-        
     }
 
     // Update is called once per frame
