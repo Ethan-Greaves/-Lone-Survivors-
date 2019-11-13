@@ -272,7 +272,7 @@ MonoBehaviour:
     type: 3}
   barrel: {fileID: 909425906}
   attackRange: 3
-  fireRate: 2
+  fireRate: 0.5
 --- !u!1 &5215483225534545354
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class TurretShooting : MonoBehaviour
     [SerializeField] Transform movingTurret;
     [SerializeField] Projectile projectile;
     [SerializeField] Transform barrel;
+    [SerializeField] AudioSource shootSFX;
 
     [Header("Turret Config")]
     [SerializeField] float attackRange = .5f;
@@ -36,10 +37,7 @@ public class TurretShooting : MonoBehaviour
         Enemy[] enemies = FindObjectsOfType<Enemy>();
 
         //If there are no enemies present 
-        if(enemies.Length == 0)
-        {
-            return;
-        }
+        if(enemies.Length == 0) { return; }
         else
         {
             //Get the first enemy
@@ -69,15 +67,20 @@ public class TurretShooting : MonoBehaviour
 
     private void LookAtClosestEnemy()
     {
-        //If the distance between turret & enemy is less than turrets range
-        if (Vector2.Distance(transform.position, enemy.transform.position) < attackRange)
+        //If enemy exists
+        if(enemy != null)
         {
-            //Look at enemy
-            movingTurret.LookAt(enemy.transform.position);
-            transform.right = enemy.transform.position - transform.position;
+            //If the distance between turret & enemy is less than turrets range
+            if (Vector2.Distance(transform.position, enemy.transform.position) < attackRange)
+            {
+                //Look at enemy
+                movingTurret.LookAt(enemy.transform.position);
+                transform.right = enemy.transform.position - transform.position;
 
-            Shoot();
+                Shoot();
+            }
         }
+        
     }
 
     private void Shoot()
@@ -87,6 +90,9 @@ public class TurretShooting : MonoBehaviour
         if (fireDelay <= 0)
         {
             Instantiate(projectile, barrel.transform.position, barrel.rotation);
+            shootSFX.Play();
+
+            //Destroy(shootSFX, 1f);
 
             //Reset the delay
             fireDelay = fireRate;
