@@ -6,20 +6,23 @@ public class Player : MonoBehaviour
 {
     [Range(0, 10)] [SerializeField] float speed = 5f;
     [SerializeField] float padding = 1f;
-    private float moveSpeed;
+    [SerializeField] PauseMenu pauseMenu;
     private Vector2 mousePos;
     float xMin, xMax, yMin, yMax;
 
     // Start is called before the first frame update
     void Start()
     {
-        moveSpeed = speed * Time.deltaTime;
     }
 
     // Update is called once per frame
     void Update()
     {
-        MouseClickMovement();
+        if(pauseMenu.GetIsPaused() == false)
+        {
+             MouseClickMovement();
+        }
+       
     }
 
 
@@ -45,7 +48,7 @@ public class Player : MonoBehaviour
         //Make sprite move towards mouse position
         if ((Vector2)transform.position != mousePos)
         {
-            transform.position = Vector2.MoveTowards(transform.position, mousePos, moveSpeed);
+            transform.position = Vector2.MoveTowards(transform.position, mousePos, speed * Time.deltaTime);
         }
     }
 

@@ -92,8 +92,6 @@ public class TurretShooting : MonoBehaviour
             Instantiate(projectile, barrel.transform.position, barrel.rotation);
             shootSFX.Play();
 
-            //Destroy(shootSFX, 1f);
-
             //Reset the delay
             fireDelay = fireRate;
         }

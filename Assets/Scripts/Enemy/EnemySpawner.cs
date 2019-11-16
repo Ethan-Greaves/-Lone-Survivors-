@@ -12,12 +12,13 @@ public class EnemySpawner : MonoBehaviour
 
     float randomSpawnTime;
     Vector3 randomPathWidth;
+    float pathOffset = 0.5f;
 
     // Start is called before the first frame update
     void Start()
     {
         randomSpawnTime = Random.Range(minSpawnTime, maxSpawnTime);
-        randomPathWidth = new Vector3(Random.Range(transform.position.x - 1, transform.position.x + 1), transform.position.y, transform.position.z);
+        randomPathWidth = new Vector3(Random.Range(transform.position.x - pathOffset, transform.position.x + pathOffset), transform.position.y, transform.position.z);
     }
 
     // Update is called once per frame
@@ -38,7 +39,7 @@ public class EnemySpawner : MonoBehaviour
 
             //Reset the spawnTime and pathWidth per enemy
             randomSpawnTime = Random.Range(minSpawnTime, maxSpawnTime);
-            randomPathWidth = new Vector3(Random.Range(transform.position.x - 0.7f, transform.position.x + 0.7f), transform.position.y, transform.position.z);
+            randomPathWidth = new Vector3(Random.Range(transform.position.x - pathOffset, transform.position.x + pathOffset), transform.position.y, transform.position.z);
         }
     }
 }
