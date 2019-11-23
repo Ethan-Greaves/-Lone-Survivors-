@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2372725493880574433
+--- !u!1 &4437411854972675941
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,44 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8063744928387653423}
-  - component: {fileID: 6204346483578543523}
+  - component: {fileID: 323472032127486052}
+  - component: {fileID: 7701309892308874621}
   m_Layer: 0
-  m_Name: Enemy Spawner
+  m_Name: Health Pack Spawner
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8063744928387653423
+--- !u!4 &323472032127486052
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2372725493880574433}
+  m_GameObject: {fileID: 4437411854972675941}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.40380967, y: -0.92502874, z: -1.71875}
+  m_LocalPosition: {x: 3.0873306, y: -0.0056931768, z: -95.66797}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6204346483578543523
+--- !u!114 &7701309892308874621
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2372725493880574433}
+  m_GameObject: {fileID: 4437411854972675941}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29479dbb99ba07f4a8b46236f23964e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnTime: 6
-  maxSpawnTime: 12
+  minSpawnTime: 2
+  maxSpawnTime: 4
   objectsToSpawn:
-  - {fileID: 2606391221783854529, guid: 284cb933a57c3314aae2095892731fa5, type: 3}
-  - {fileID: 1695921312243686421, guid: 9c454ccd2fe48dc4c920377be0925f74, type: 3}
+  - {fileID: 2344671371802776895, guid: e77546c6c4d498d4199098f9dd41c77d, type: 3}
   spawnOffsetX: 0.5
-  spawnOffsetY: 0
+  spawnOffsetY: 0.5

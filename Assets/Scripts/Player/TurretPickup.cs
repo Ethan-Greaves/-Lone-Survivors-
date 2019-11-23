@@ -5,7 +5,7 @@ using UnityEngine;
 public class TurretPickup : MonoBehaviour
 {
     [SerializeField] Turret turret;
-    [SerializeField] Canvas turretUICanvas;
+    [SerializeField] GameObject turretUIImage;
     private bool isPickedUp = false;
     private float waitTime = .1f;
 
@@ -61,8 +61,8 @@ public class TurretPickup : MonoBehaviour
     {
         //Display or hide UI depending on if turret is picked up or not
         if (isPickedUp)
-            turretUICanvas.gameObject.SetActive(true);
+            turretUIImage.gameObject.SetActive(true);
         else
-            turretUICanvas.gameObject.SetActive(false);
+            turretUIImage.gameObject.SetActive(false);
     }
 }

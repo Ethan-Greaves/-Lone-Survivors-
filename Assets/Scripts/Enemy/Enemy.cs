@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //If the enemy collides with the base
-        if (collision.gameObject.tag == "Base")
+        if (collision.gameObject.tag == "Base" || collision.gameObject.tag == "MenuCollider")
         {
             Destroy(gameObject, 1f);
         }

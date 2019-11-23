@@ -58,7 +58,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1647285749949988836}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -100, y: -100, z: 0}
+  m_LocalPosition: {x: -1000, y: -1000, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9216620066577051834}
@@ -271,6 +271,7 @@ MonoBehaviour:
   projectile: {fileID: -4684186481391037682, guid: 4a13bce9a28977d46a23b50d87ff4c22,
     type: 3}
   barrel: {fileID: 909425906}
+  shootSFX: {fileID: 0}
   attackRange: 3
   fireRate: 0.5
 --- !u!1 &5215483225534545354

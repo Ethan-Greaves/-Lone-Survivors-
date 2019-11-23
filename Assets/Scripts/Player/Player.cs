@@ -1,18 +1,27 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     [Range(0, 10)] [SerializeField] float speed = 5f;
     [SerializeField] float padding = 1f;
     [SerializeField] PauseMenu pauseMenu;
+    [SerializeField] Text playerHealthUI;
+    [SerializeField] int damagePerSec = 3;
+
+    private float playerHealth;
     private Vector2 mousePos;
     float xMin, xMax, yMin, yMax;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerHealth = 100.0f;
+        Debug.Log(playerHealth);
+        playerHealthUI.text = playerHealth.ToString();
     }
 
     // Update is called once per frame
@@ -22,9 +31,23 @@ public class Player : MonoBehaviour
         {
              MouseClickMovement();
         }
-       
+
+        //Radiation Sickness
+        LoseHealthOverTime();
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+    }
+
+    public void AddHealth(int healAmount)
+    { 
+        playerHealth += healAmount;
+
+        //Make sure player does not exceed full health
+        if (playerHealth > 100) { playerHealth = 100; }
+    }
 
     private void KeyboardMovement()
     {
@@ -60,5 +83,34 @@ public class Player : MonoBehaviour
         xMax = gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - padding;
         yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + padding;
         yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - padding;
+    }
+
+    private void LoseHealthOverTime()
+    { 
+        if(playerHealth > 0)
+        {
+            //Make the player lose x health every second
+            playerHealth -= Time.deltaTime * damagePerSec;
+
+            //Create a local INT variable version of player health so that the UI does not dipsplay decimals
+            int playerHealthToInt = Mathf.RoundToInt(playerHealth);
+
+            //Update the playerHealth UI as int 
+            playerHealthUI.text = playerHealthToInt.ToString();
+        }
+        else
+        {
+            KillPlayer();
+        }
+    }
+
+    private void KillPlayer()
+    {
+        
+    }
+
+    public float GetPlayerHealth()
+    {
+        return playerHealth;
     }
 }

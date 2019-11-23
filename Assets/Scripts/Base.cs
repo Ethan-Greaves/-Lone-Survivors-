@@ -2,20 +2,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Base : MonoBehaviour
 {
     [SerializeField] int health = 100;
+    [SerializeField] Text baseHealthUI;
+
+    [SerializeField] SceneLoader sceneLoader;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        baseHealthUI.text = health.ToString();
+        //sceneLoader = GameObject.FindObjectOfType<SceneLoader>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        StartCoroutine(LoseGame());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -29,19 +35,21 @@ public class Base : MonoBehaviour
         if (health > 0)
         {
             health -= damage;
-        }
-        else
-        {
-            GameOver();
+            baseHealthUI.text = health.ToString();
+            Debug.Log(health);
         }
     }
 
-    private void GameOver()
+    private IEnumerator LoseGame()
     {
-        //Pause game 
+        if(health <= 0)
+        {
+            //TODO play lose game sound effect
 
-        //Display game over screen
-
-        //have exit or restart level buttons
+            //Wait 2 seconds 
+            yield return new WaitForSeconds(2);
+            //Player loses, load game over
+            sceneLoader.LoadSceneByName("Game Over Screen");
+        }
     }
 }
