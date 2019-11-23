@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    private Score score;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        score = FindObjectOfType<Score>();
     }
 
     public void LoadNextScene()
@@ -27,6 +29,7 @@ public class SceneLoader : MonoBehaviour
     {
         int startMenu = 0;
         SceneManager.LoadScene(startMenu);
+        score.DestroyScoreObject();
     }
 
     //This function will only work on standalone builds of the game.

@@ -6,9 +6,10 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    [SerializeField] GameObject[] objectsToSpawn;
     [SerializeField] float minSpawnTime = 2f;
     [SerializeField] float maxSpawnTime = 4f;
-    [SerializeField] GameObject[] objectsToSpawn;
+    [Header("Offest Settings")]
     [SerializeField] float spawnOffsetX = 0.5f;
     [SerializeField] float spawnOffsetY = 0.5f;
 
@@ -45,7 +46,7 @@ public class Spawner : MonoBehaviour
 
             randomPathWidth = new Vector3(Random.Range(transform.position.x - spawnOffsetX, transform.position.x + spawnOffsetX),
                                           Random.Range(transform.position.y - spawnOffsetY, transform.position.y + spawnOffsetY), 
-                                                       transform.position.z);
+                                                       transform.position.z);           
         }
     }
 }

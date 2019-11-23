@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  healAmount: 15
+  healAmount: 10
 --- !u!50 &1767348234
 Rigidbody2D:
   serializedVersion: 4

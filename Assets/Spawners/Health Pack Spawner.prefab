@@ -13,7 +13,7 @@ GameObject:
   m_Layer: 0
   m_Name: Health Pack Spawner
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -43,9 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29479dbb99ba07f4a8b46236f23964e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnTime: 2
-  maxSpawnTime: 4
   objectsToSpawn:
-  - {fileID: 2344671371802776895, guid: e77546c6c4d498d4199098f9dd41c77d, type: 3}
-  spawnOffsetX: 0.5
-  spawnOffsetY: 0.5
+  - {fileID: 0}
+  minSpawnTime: 5
+  maxSpawnTime: 10
+  spawnOffsetX: 6
+  spawnOffsetY: 4

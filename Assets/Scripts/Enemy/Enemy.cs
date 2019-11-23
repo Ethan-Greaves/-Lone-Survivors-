@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
 
     [Header("References")]
     [SerializeField] Projectile projectile;
+    private Score score;
 
     Vector2 moveDown;
     Rigidbody2D rb;
@@ -22,6 +23,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        score = FindObjectOfType<Score>();
         Move();
     }
 
@@ -51,6 +53,7 @@ public class Enemy : MonoBehaviour
 
             if (health <= 0)
             {
+                score.UpdateScore();
                 Destroy(gameObject);
             }
         }

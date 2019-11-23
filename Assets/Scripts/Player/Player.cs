@@ -11,15 +11,17 @@ public class Player : MonoBehaviour
     [SerializeField] PauseMenu pauseMenu;
     [SerializeField] Text playerHealthUI;
     [SerializeField] int damagePerSec = 3;
+    [SerializeField] SceneLoader sceneLoader;
 
     private float playerHealth;
     private Vector2 mousePos;
     float xMin, xMax, yMin, yMax;
+    bool changeColour = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerHealth = 100.0f;
+        playerHealth = 30.0f;
         Debug.Log(playerHealth);
         playerHealthUI.text = playerHealth.ToString();
     }
@@ -34,11 +36,6 @@ public class Player : MonoBehaviour
 
         //Radiation Sickness
         LoseHealthOverTime();
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
     }
 
     public void AddHealth(int healAmount)
@@ -100,13 +97,17 @@ public class Player : MonoBehaviour
         }
         else
         {
-            KillPlayer();
+            StartCoroutine(GameOver());
         }
     }
 
-    private void KillPlayer()
+    private IEnumerator GameOver()
     {
-        
+        //Wait 2 seconds 
+        yield return new WaitForSeconds(4);
+
+        //Player loses, load game over
+        sceneLoader.LoadSceneByName("Game Over Screen");
     }
 
     public float GetPlayerHealth()

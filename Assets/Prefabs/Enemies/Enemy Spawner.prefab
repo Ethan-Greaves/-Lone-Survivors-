@@ -43,10 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29479dbb99ba07f4a8b46236f23964e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnTime: 6
-  maxSpawnTime: 12
   objectsToSpawn:
   - {fileID: 2606391221783854529, guid: 284cb933a57c3314aae2095892731fa5, type: 3}
   - {fileID: 1695921312243686421, guid: 9c454ccd2fe48dc4c920377be0925f74, type: 3}
+  minSpawnTime: 4
+  maxSpawnTime: 12
   spawnOffsetX: 0.5
   spawnOffsetY: 0
