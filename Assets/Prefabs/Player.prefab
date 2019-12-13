@@ -144,11 +144,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  padding: 1
+  padding: 50
   pauseMenu: {fileID: 4993317890696775166, guid: 0926c3b92277f884d9149e0792808d72,
     type: 3}
   playerHealthUI: {fileID: 0}
   damagePerSec: 2
+  sceneLoader: {fileID: 0}
+  playerHealth: 100
 --- !u!114 &4636382390799840217
 MonoBehaviour:
   m_ObjectHideFlags: 0

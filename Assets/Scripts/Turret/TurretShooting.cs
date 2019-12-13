@@ -8,7 +8,7 @@ public class TurretShooting : MonoBehaviour
     [Header("References")]
     [SerializeField] Transform movingTurret;
     [SerializeField] Projectile projectile;
-    [SerializeField] Transform barrel;
+    [SerializeField] Transform barrel = null;
     [SerializeField] AudioSource shootSFX;
 
     [Header("Turret Config")]

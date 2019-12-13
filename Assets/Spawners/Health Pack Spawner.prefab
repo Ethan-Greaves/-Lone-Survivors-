@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsToSpawn:
   - {fileID: 0}
-  minSpawnTime: 5
-  maxSpawnTime: 10
+  minSpawnTime: 3
+  maxSpawnTime: 8
   spawnOffsetX: 6
   spawnOffsetY: 4

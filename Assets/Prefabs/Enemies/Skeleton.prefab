@@ -116,11 +116,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 10
-  moveSpeed: 20
+  moveSpeed: 30
   health: 750
   projectile: {fileID: -4684186481391037682, guid: 4a13bce9a28977d46a23b50d87ff4c22,
     type: 3}
-  score: {fileID: 0}
 --- !u!50 &306099545
 Rigidbody2D:
   serializedVersion: 4

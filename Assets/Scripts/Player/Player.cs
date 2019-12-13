@@ -13,15 +13,14 @@ public class Player : MonoBehaviour
     [SerializeField] int damagePerSec = 3;
     [SerializeField] SceneLoader sceneLoader;
 
-    private float playerHealth;
+    [SerializeField] float playerHealth;
     private Vector2 mousePos;
     float xMin, xMax, yMin, yMax;
-    bool changeColour = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerHealth = 30.0f;
+        playerHealth = 100.0f;
         Debug.Log(playerHealth);
         playerHealthUI.text = playerHealth.ToString();
     }
