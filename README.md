@@ -11,7 +11,7 @@
 ## Overview 📖
 **"The war has ended, the bombs have exploded! Now, it's just you and one turret left. Can you survive against the hordes of mutated enemies?"**
 
-Lone Survivors is a game created in Unity for an assignment in my second year of university. It uses many features of the Unity engine and is written in C#, 
+Lone Survivors is a game/proof of concept created in Unity for an assignment in my second year of university. It uses many features of the Unity engine and is written in C#, 
 a web page was also created for the game, as well as a game design document, and a marketing plan.
 
 * <a href="https://ethan-greaves.github.io/Games-Development-Website/">Web page</a>
